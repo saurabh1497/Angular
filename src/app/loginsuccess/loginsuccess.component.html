@@ -1,0 +1,17 @@
+<div>
+  <div style="font-size:150%;"> <b>Event Enrolled:</b></div>
+  <br>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let e of eventM">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{e.eventName}}</h5>
+          <p> {{e.entryCount}} </p>
+          <p> {{e.skillSet}} </p>
+          <p class="card-text"></p>
+        </div>
+      </div> 
+      <br> 
+    </div>
+  </div>
+</div>
