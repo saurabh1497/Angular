@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { EventM } from '../model/user.model';
 
 @Injectable()
 export class EventMangement {
@@ -15,6 +16,23 @@ export class EventMangement {
             .pipe(
                 catchError(this.handleError)
             );
+    }
+
+    // create event 
+    public createEvent(event : EventM) : Observable<HttpResponse<EventM>>{
+        return this.http.post<EventM>(
+            'http://localhost:8091/createevent/',
+            event, 
+            {observe: 'response'}
+        ).pipe(
+            catchError(this.handleError)
+        );
+    }
+
+    // delete event
+    public deleteOneEvent(id: Number): Observable<HttpResponse<EventM>> {
+        return this.http.delete<EventM>('http://localhost:8091/deleteevent/' + id, 
+            { observe: 'response' });
     }
 
     // To make code loosely coupled

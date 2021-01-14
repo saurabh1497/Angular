@@ -1,0 +1,44 @@
+<div class="container">
+    <div style="font-size:150%;"> <b>Create a Event:</b></div>
+    <br>
+    <br>
+    <form (submit)="onFormSubmit()" [formGroup]="EventForm">
+        Event Name: <input type="text" formControlName="eventName">
+        <BR> <BR>
+
+        Count of Panel: <input type="text" formControlName="countOfPanel">
+        <BR> <BR>
+
+        Skill Set: <input type="text" formControlName="skillSet">
+        <BR> <BR>
+
+        Date: <input type="text" formControlName="date">
+        <BR> <BR>
+
+        Esclated Time: <input type="text" formControlName="escTime">
+        <BR> <BR>
+
+        Status: <input type="text" formControlName="status">
+        <BR> <BR>
+
+        Entry Count: <input type="text" formControlName="entryCount">
+        <BR> <BR>
+
+        Post ID: <input type="text" formControlName="postID">
+        <BR> <BR>
+
+        Designation: <input type="text" formControlName="designation">
+        <BR> <BR>
+
+        Department: <input type="text" formControlName="department">
+        <BR> <BR>
+
+        Level: <input type="text" formControlName="level">
+        <BR> <BR>
+
+        Action: <input type="text" formControlName="action">
+        <BR> <BR>
+
+        <input type="submit" [disabled]="!EventForm.valid" value="AddEvent">
+    </form>
+</div>

@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
 import { EventMangement } from './services/event.service';
+import { CreateeventComponent } from './createevent/createevent.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { EventMangement } from './services/event.service';
     LoginComponent,
     RegistrationComponent,
     LoginsuccessComponent,
+    CreateeventComponent,
   ],
   imports: [
     BrowserModule,

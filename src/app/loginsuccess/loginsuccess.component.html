@@ -1,17 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navigate ->></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/registeration">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/createevent">Create Event</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
 <div>
-  <div style="font-size:150%;"> <b>Event Enrolled:</b></div>
+  <div style="font-size:150%;"> <b>Events Enrolled:</b></div>
   <br>
   <div class="row">
     <div class="col-md-4" *ngFor="let e of eventM">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{e.eventName}}</h5>
-          <p> {{e.entryCount}} </p>
-          <p> {{e.skillSet}} </p>
+          <p> Entry Count : {{e.entryCount}} </p>
+          <p> Skill Set : {{e.skillSet}} </p>
           <p class="card-text"></p>
+          <button style="text-align: right;" (click)="Delete(e)" class="btn btn-outline-primary"
+                                style="font-size:100%; color: black;">
+                                DELETE</button>
         </div>
-      </div> 
-      <br> 
+      </div>
+      <br>
     </div>
   </div>
+  <small class="float-right btextual" [routerLink]="['/createevent']">Create a new Event..Click here!</small>
 </div>
